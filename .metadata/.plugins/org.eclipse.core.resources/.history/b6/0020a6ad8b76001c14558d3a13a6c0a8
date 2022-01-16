@@ -1,0 +1,136 @@
+package com.day2.q2;
+
+import java.util.Scanner;
+
+class Book{
+	public String bookTitle;
+	public String author;
+	public String ISBN;
+	public int numOfCopies;
+	public Book(String title,String auth,String isbn,int num) {
+		this.bookTitle=title;
+		this.author=auth;
+		this.ISBN=isbn;
+		this.numOfCopies=num;
+	}
+	public void display()
+	{
+		System.out.println(bookTitle+"-"+author+"-"+ISBN+"-"+numOfCopies);
+	}
+}
+
+class BookStore{
+	public String bookStoreName;
+	public Book[] books;
+	public int counter;
+	public BookStore(String name) {
+		this.bookStoreName=name;
+		this.books=new Book[10];
+		this.counter=0;
+	}
+	void display() {
+		if(this.counter==0)
+		{
+			System.out.println("No book exists..");
+		}else {
+			int i=0;
+			while(i<this.counter)
+			{
+				Book b=books[i];
+				b.display();
+				i++;
+			}
+			
+		}
+		
+	}
+	
+	void order(String isbn, int numOfCopies)
+	{
+		boolean bookFound=false;
+		for(int i=0;i<this.counter;i++) {
+			if(books[i].ISBN.equals(isbn))
+			{
+				books[i].numOfCopies+=numOfCopies;
+				
+				bookFound=true;
+				break;
+			}
+		}
+		if(bookFound==false)
+		{
+			System.out.println("Book does not exist in book store.. Add new book");
+			Scanner sc=new Scanner(System.in);
+			System.out.print("Enter book title: ");
+			String title=sc.next();
+			System.out.print("Enter author: ");
+			String auth=sc.next();
+			books[counter]=new Book(title,auth,isbn,numOfCopies);
+			counter++;
+			System.out.println("New book added to book store...");
+		}
+	}
+	void sell(String bookTitle, int noOfCopies)
+	{
+		boolean found=false;
+		for(int i=0;i<this.counter;i++)
+		{
+			Book b=books[i];
+			if(b.bookTitle.equals(bookTitle) ) {
+				b.numOfCopies-=noOfCopies;
+				System.out.println("Book sold... no of copies of book "+b.bookTitle+" left are : "+b.numOfCopies);
+				found=true;
+				break;
+			}
+		}
+		
+		if(found==false)
+		{
+			System.out.println("Book does not exist in the "+bookStoreName+" Book Store");
+		}
+	}
+}
+public class BookStoreApp {
+	public static void main(String[] args) {
+		
+		Scanner scan=new Scanner(System.in);
+		BookStore bkSt=new BookStore("MybookStore");
+		boolean stop=false;
+		while(stop==false) {
+			System.out.println("option 1 Display option 2 order option 3 sell");
+			int ch=scan.nextInt();
+			if(ch==1)
+			{
+				System.out.println("Books in the book store are listed as :");
+				bkSt.display();
+			}
+			else if(ch==2)
+			{
+				System.out.println("Order a book..");
+				System.out.print("Enter isbn ");
+				String isbnNo=scan.next();
+				System.out.print("Enter number of copies ");
+				int num=scan.nextInt();
+				bkSt.order(isbnNo, num);
+				System.out.println("Book ordered..");
+				
+			}
+			else if(ch==3)
+			{
+				System.out.println("Sell a book..");
+				System.out.print("Enter book title ");
+				String t=scan.next();
+				System.out.println("Enter number of copies ");
+				int n=scan.nextInt();
+				
+				bkSt.sell(t, n);		
+				
+			}else {
+				stop=true;
+				System.out.println("Exit the application");
+				
+			}
+		}
+		
+	}
+}

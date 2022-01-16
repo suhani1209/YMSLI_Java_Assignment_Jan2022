@@ -1,0 +1,25 @@
+package com.day2.q3;
+
+public class SavingAccount {
+	private int interest=5;
+	private int maxWtithdrawAmountLimit;
+	
+	
+	public SavingAccount() {
+		super();
+	}
+
+	public SavingAccount(String memberName, double accountBalance,int maxLimit) {
+		
+		this.maxWtithdrawAmountLimit=maxLimit;
+	}
+
+	public double getBalance() {
+		return ((interest/100)*this.getAccountBalance()+this.getAccountBalance());
+	}
+	
+	public double withdraw(double amount)
+	{
+		if(amount<maxWtithdrawAmountLImit)
+	}
+}

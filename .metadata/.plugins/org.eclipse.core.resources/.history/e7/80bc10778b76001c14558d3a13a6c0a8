@@ -1,0 +1,11 @@
+package com.day2.q4;
+
+
+public class application {
+	public static void main(String[] args) {
+		
+		Student student1=new Student(1);
+		student1.display();
+		
+	}
+}

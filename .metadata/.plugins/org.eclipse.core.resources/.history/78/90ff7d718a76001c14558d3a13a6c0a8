@@ -1,0 +1,10 @@
+package com.day2.q4;
+
+import java.util.Scanner;
+
+public class StudentClassOverloading {
+	public static void main(String[] args) {
+		
+		
+	}
+}

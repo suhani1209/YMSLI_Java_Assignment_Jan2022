@@ -1,5 +1,3 @@
 INDEX VERSION 1.131+C:\Users\Dell\Desktop\lab_assignments_java\.metadata\.plugins\org.eclipse.jdt.core
-23342797.index
-2789485144.index
-1996160061.index
 433660574.index
+4158079922.index

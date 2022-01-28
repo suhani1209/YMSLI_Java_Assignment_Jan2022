@@ -1,4 +1,4 @@
-package com.day5.q1;
+package com.day4.q1;
 
 import java.io.File;
 import java.io.FileInputStream;

@@ -1,4 +1,4 @@
-package com.day5.q2;
+package com.day4.q2;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;

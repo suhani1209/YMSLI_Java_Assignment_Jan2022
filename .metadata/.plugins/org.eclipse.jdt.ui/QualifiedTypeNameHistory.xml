@@ -50,4 +50,12 @@
 <fullyQualifiedTypeName name="com.bookApp.model.service.BookServiceImpl"/>
 <fullyQualifiedTypeName name="com.bookApp.model.persistance.Book"/>
 <fullyQualifiedTypeName name="java.util.List"/>
+<fullyQualifiedTypeName name="java.sql.PreparedStatement"/>
+<fullyQualifiedTypeName name="bookApp.exception.MyException"/>
+<fullyQualifiedTypeName name="bookApp.exception.BookNotFoundException"/>
+<fullyQualifiedTypeName name="bookApp.model.perisitance.BookDao"/>
+<fullyQualifiedTypeName name="bookApp.model.perisitance.ConnectionFactory"/>
+<fullyQualifiedTypeName name="bookApp.model.service.BookServiceImpl"/>
+<fullyQualifiedTypeName name="bookApp.model.perisitance.Book"/>
+<fullyQualifiedTypeName name="com.case_study2.Dish.Type"/>
 </qualifiedTypeNameHistroy>
